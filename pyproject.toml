@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "gmx_speedtest"
+version = "0.1.0"
+description = "Check speed of GROMACS MD simulation for a varying number of threads."
+authors = ["lucastepper <lucas.tepper.91@gmail.com>"]
+license = "GNU"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+gmx_speedtest = 'gmx_speedtest.run:run_speedtest'
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
