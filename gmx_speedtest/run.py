@@ -65,10 +65,10 @@ def run_single(tpr_file, plumed_file, extra_args, n_cores):
                 print(f"nt: {n_cores}            (ns/day)    (hour/ns)")
                 print(f"{line}\n")
                 return False, command
+        # print(out.split("\n"))
     except Exception:
         print("Command failed")
         return True, command
-    return True, command
 
 
 def make_error_message(err_cmd):
@@ -86,7 +86,10 @@ def run_speedtest():
     # check plumed file input
     if len(sys.argv) > 2:
         plumed_file = sys.argv[2]
-        print(f"Using plumed file:\n\t{plumed_file}")
+        if not plumed_file or plumed_file == "false":
+            plumed_file = None
+        else:
+            print(f"Using plumed file:\n\t{plumed_file}")
     else:
         plumed_file = None
     # check extra arguments
