@@ -109,3 +109,8 @@ def run_speedtest():
         err, cmd = run_single(tpr_file, plumed_file, extra_args, i)
         if err:
             make_error_message(cmd)
+
+
+if __name__ == "__main__":
+    run_speedtest()
+
